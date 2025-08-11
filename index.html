@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A-School O‘quv Markazi</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+    /* Yorqin, dinamik gradient fon */
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffa114 0%, #ffa928 50%, #ff8c00 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 4rem;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                   0 0 20px rgba(255, 255, 255, 0.5);
+      margin-bottom: 0.3rem;
+    }
+.logo-container {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  margin-top: -25px;
+}
+
+.logo {
+  width: 180px;
+  height: 180px;
+  margin-right: -0.9rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))
+          drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+           position: relative;
+  top: -10px;
+  /* height: 210px; biroz kattalashtirish, rasm to‘liq ko‘rinishi uchun */
+  width: auto;
+  display: block;
+}
+
+
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 3rem;
+      text-shadow: 0 0 6px rgba(0,0,0,0.2);
+    }
+i{
+   font-size: 26px; /* katta o'lcham asosiy ekran uchun */
+}
+    .links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    a {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 1rem 0;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: 0 4px 15px rgba(255, 184, 77, 0.6);
+  transition: 
+    background-color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.3s ease;
+  user-select: none;
+  min-width: 200px;
+  height: 36px;
+  white-space: nowrap;
+}
+
+
+    a svg {
+      width: 26px;
+      height: 26px;
+      fill: white;
+      transition: fill 0.3s ease;
+    }
+
+    a:hover, a:focus {
+      background: white;
+      color: #ffb84d;
+      box-shadow: 0 6px 20px rgba(255, 184, 77, 1);
+      transform: scale(1.1);
+    }
+
+    a:hover svg, a:focus svg {
+      fill: #ffb84d;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 12px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+      user-select: none;
+      text-shadow: 0 0 3px rgba(0,0,0,0.15);
+    }
+
+    /* Responsive uchun kichik ekranlar */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 3rem;
+        margin-top: -20px;
+      }
+      .logo-container{
+        margin-bottom: -30px;
+        margin-top: -60px;
+        margin-left: -20px;
+
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      a {
+        font-size: 1.1rem;
+        padding: 0.8rem 2rem;
+      }
+      .line{
+        display: none;
+      }
+      i{
+        font-size: 24px;
+      }
+    
+    }
+      @media screen and (min-width: 480px) and (max-width:500px){
+ .line{
+        display: none;
+      }
+     
+      }
+  </style>
+</head>
+<body>
+<h1>
+  <span class="logo-container">
+    <img class="logo" src="./logo_2-removebg-preview.png" alt="">
+  </span>
+ <span class="line">- </span>School
+</h1>
+  <p>Siz bilan bog‘lanish uchun ijtimoiy tarmoqlar:</p>
+  <div class="links">
+    <a href="https://instagram.com/aschool_uz" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+<i class='bx bxl-instagram' ></i>
+      Instagram
+    </a>
+    <a href="https://t.me/aschool_uz" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+<i class='bx bxl-telegram'></i>   
+   Telegram
+    </a>
+ <a href="https://t.me/aschool_admin" target="_blank" rel="noopener noreferrer" aria-label="Admin">
+ <i class='bx bxs-user'></i>
+  Admin
+</a>
+
+
+  </div>
+  <footer>© 2025 A-School O‘quv Markazi. Barcha huquqlar himoyalangan.</footer>
+</body>
+</html>
