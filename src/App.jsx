@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import CoursePage from './pages/CoursePage';
+import ScrollToHash from "./components/ScrollToHash"; 
+ 
 import './index.css';
 
 export default function App() {
@@ -18,6 +20,7 @@ export default function App() {
   return (
     <Router>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
+       <ScrollToHash />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/kurs/:slug" element={<CoursePage />} />
