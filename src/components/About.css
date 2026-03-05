@@ -1,0 +1,124 @@
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 5vw, 3.5rem);
+}
+
+.about-vis {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 4/3;
+  background: var(--bg2);
+  position: relative;
+  cursor: pointer;
+  transition: border-color .3s, box-shadow .3s;
+}
+.about-vis:hover {
+  border-color: var(--border-o);
+  box-shadow: 0 20px 60px var(--shadow);
+}
+
+.about-vis-inner {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: .9rem;
+  background: linear-gradient(135deg, var(--p-soft) 0%, rgba(244,107,30,.07) 100%);
+  transition: background .4s;
+  position: relative;
+}
+.about-vis-inner.hovered {
+  background: linear-gradient(135deg, var(--o-dim) 0%, var(--p-soft) 100%);
+}
+
+.about-ring {
+  width: 88px; height: 88px; border-radius: 50%;
+  background: var(--o);
+  display: grid; place-items: center; color: #fff;
+  box-shadow: 0 0 0 16px var(--o-dim), 0 0 0 32px rgba(244,107,30,.05);
+  transition: transform .4s var(--ease), box-shadow .4s;
+  position: relative; z-index: 1;
+}
+.about-vis:hover .about-ring {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 20px var(--o-dim), 0 0 0 40px rgba(244,107,30,.08);
+}
+
+.ring-pulse {
+  animation: ringPulse 1.5s ease-in-out infinite;
+}
+@keyframes ringPulse {
+  0%,100% { box-shadow: 0 0 0 16px var(--o-dim), 0 0 0 32px rgba(244,107,30,.05); }
+  50% { box-shadow: 0 0 0 24px var(--o-dim), 0 0 0 48px rgba(244,107,30,.08); }
+}
+
+.about-vis-label {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: .9rem; color: var(--text);
+  position: relative; z-index: 1;
+}
+.about-vis-sub { font-size: .75rem; color: var(--muted); position: relative; z-index: 1; }
+
+/* Particles */
+.particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity .4s;
+  background: var(--o);
+}
+.about-vis-inner.hovered .particle { animation: particleFloat 3s ease-in-out infinite; opacity: .6; }
+
+.particle-0 { width: 6px; height: 6px; top: 20%; left: 15%; animation-delay: 0s !important; }
+.particle-1 { width: 4px; height: 4px; top: 70%; left: 80%; animation-delay: .5s !important; background: var(--p) !important; }
+.particle-2 { width: 8px; height: 8px; top: 40%; left: 85%; animation-delay: 1s !important; }
+.particle-3 { width: 5px; height: 5px; top: 80%; left: 20%; animation-delay: 1.5s !important; background: var(--p) !important; }
+.particle-4 { width: 4px; height: 4px; top: 15%; left: 70%; animation-delay: .8s !important; }
+.particle-5 { width: 7px; height: 7px; top: 60%; left: 10%; animation-delay: .3s !important; background: var(--p) !important; }
+
+@keyframes particleFloat {
+  0%,100% { transform: translateY(0) scale(1); opacity: .5; }
+  50% { transform: translateY(-20px) scale(1.2); opacity: .9; }
+}
+
+/* About tag */
+.about-tag {
+  position: absolute; bottom: 1.1rem; left: 1.1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px; padding: .7rem .95rem;
+  display: flex; align-items: center; gap: .6rem;
+  transform: translateY(8px); opacity: 0;
+  transition: transform .4s var(--ease), opacity .4s, border-color .3s;
+}
+.about-tag.tag-visible {
+  transform: translateY(0); opacity: 1;
+  border-color: var(--border-o);
+}
+.dot {
+  width: 8px; height: 8px; border-radius: 50%; background: #22C55E;
+  flex-shrink: 0; box-shadow: 0 0 0 3px rgba(34,197,94,.2);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%,100% { box-shadow: 0 0 0 3px rgba(34,197,94,.2); }
+  50% { box-shadow: 0 0 0 6px rgba(34,197,94,.08); }
+}
+.tag-l { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; }
+.tag-v { font-family: 'Syne', sans-serif; font-weight: 600; font-size: .83rem; color: var(--text); }
+
+.mission-quote {
+  margin-top: 1.8rem;
+  padding: 1.3rem 1.5rem;
+  border-left: 2.5px solid var(--o);
+  background: var(--o-dim);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: .95rem; line-height: 1.72; color: var(--text); font-style: italic;
+}
+.mission-quote strong { color: var(--o); font-style: normal; font-weight: 700; }
+.about-actions { display: flex; gap: .7rem; margin-top: 1.8rem; flex-wrap: wrap; }
+
+@media (max-width: 1024px) { .about-section { grid-template-columns: 1fr; } }

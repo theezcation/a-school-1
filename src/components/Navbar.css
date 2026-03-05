@@ -1,0 +1,115 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1rem, 4vw, 3.5rem);
+  background: var(--nav-bg);
+  backdrop-filter: blur(22px) saturate(1.5);
+  border-bottom: 1px solid var(--border);
+  z-index: 200;
+  transition: background .3s, border-color .3s;
+}
+.nav--scrolled { border-color: var(--border-o); }
+.nav-left { display: flex; align-items: center; gap: 2.5rem; }
+.nav-right { display: flex; align-items: center; gap: .65rem; }
+
+.logo { display: flex; align-items: center; gap: .6rem; }
+.logo-mark {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--o); display: grid; place-items: center;
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 1rem; color: #fff; flex-shrink: 0;
+  transition: box-shadow .2s;
+  position: relative; overflow: hidden;
+}
+.logo-mark::after {
+  content: ''; position: absolute; top: -50%; left: -10%;
+  width: 45%; height: 200%; background: rgba(255,255,255,.2);
+  transform: skewX(-18deg);
+}
+.logo:hover .logo-mark { box-shadow: 0 0 0 3px var(--o-glow); }
+.logo-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: .95rem; color: var(--text); }
+.logo-name b { color: var(--o); }
+
+.nav-links { display: flex; list-style: none; gap: .15rem; align-items: center; }
+.nav-link-btn, .nav-drop-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--muted); font-family: 'DM Sans', sans-serif;
+  font-size: .875rem; font-weight: 500;
+  padding: .4rem .85rem; border-radius: 8px;
+  display: flex; align-items: center; gap: .35rem;
+  transition: color .2s, background .2s;
+}
+.nav-link-btn:hover, .nav-drop-btn:hover { color: var(--text); background: var(--card); }
+
+.nav-dropdown { position: relative; }
+.drop-menu {
+  position: absolute; top: calc(100% + .5rem); left: 0;
+  background: var(--bg1); border: 1px solid var(--border-o);
+  border-radius: 12px; padding: .5rem;
+  min-width: 220px;
+  box-shadow: 0 20px 60px var(--shadow);
+  animation: dropIn .2s var(--ease);
+  z-index: 300;
+}
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.drop-item {
+  display: flex; align-items: center; gap: .65rem;
+  padding: .55rem .75rem; border-radius: 8px;
+  color: var(--muted); font-size: .875rem; font-weight: 500;
+  transition: background .15s, color .15s;
+}
+.drop-item:hover { background: var(--card-h); color: var(--text); }
+.drop-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+.theme-btn {
+  width: 34px; height: 34px; border-radius: 9px;
+  border: 1px solid var(--border); background: var(--card);
+  color: var(--muted); cursor: pointer; display: grid; place-items: center;
+  transition: border-color .2s, color .2s;
+}
+.theme-btn:hover { border-color: var(--o); color: var(--o); }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: .3rem;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--text); border-radius: 2px; transition: .3s;
+}
+
+.mobile-menu {
+  position: fixed; top: var(--nav-h); left: 0; right: 0;
+  background: var(--bg1); border-bottom: 1px solid var(--border-o);
+  padding: 1rem; display: flex; flex-direction: column; gap: .3rem;
+  z-index: 199;
+  animation: slideDown .3s var(--ease);
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.mob-link {
+  display: block; padding: .7rem 1rem;
+  color: var(--muted); font-size: .9rem; font-weight: 500;
+  border-radius: 8px; border: none; background: none;
+  cursor: pointer; font-family: 'DM Sans', sans-serif;
+  text-align: left;
+  transition: color .2s, background .2s;
+}
+.mob-link:hover { color: var(--text); background: var(--card); }
+
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+@media (max-width: 480px) {
+  .btn-outline { display: none; }
+}
