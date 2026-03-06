@@ -121,7 +121,7 @@ export default function Navbar({ theme, toggleTheme }) {
             <span className="logo-badge" aria-hidden="true">
               <img
                 className="logo-img"
-                src="https://iopsffjoojvyhxjuzcal.supabase.co/storage/v1/object/sign/Logo/aschool.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80NDI2YTAwNy0yOGE3LTQ4NzktOGExOS0xMWMzMjMxYzMyMDciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJMb2dvL2FzY2hvb2wucG5nIiwiaWF0IjoxNzcyNzM2OTU1LCJleHAiOjMxNTUzNDEyMDA5NTV9.qqMn-hWrNhoLD6ttew5dlPspvvFS6aTzAwu3r7_bTG4"
+                src="https://lh3.google.com/u/0/d/12LlHzmVxnghb4Lbu6Vc_Yme6ytOLrnHP=w1920-h952-iv1?auditContext=prefetch"
                 alt=""
                 loading="eager"
               />
