@@ -8,12 +8,12 @@ npm install
 ```
 
 ### 2. Supabase sozlash
-1. [supabase.com](https://supabase.com) da yangi loyiha yarating
+1. [supabase.com](https://theezcation.github.io) da yangi loyiha yarating
 2. SQL Editor da `supabase_migration.sql` faylini ishga tushiring
 3. `.env` fayl yarating:
 
 ```env
-VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_URL=https://theezcation.github.io
 VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
 
